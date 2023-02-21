@@ -8,7 +8,7 @@ This project comes from a game I play with friends. Thus, in this project, I use
 - you are only allowed to navigate through Wikipedia by following the urls on the page
 
 Finding an optimal solution to this problem would be easy using the objects of this problem. But the goal here was different. A clever technique in this game is
-to always follow the first url of the page. Doing this, you are certain to land on the "philosophy" page (still in french). Once you reach this page, you begin your search.
+to always follow the first url of the page. Doing this, you are certain to land on the *philosophy* page (still in french). Once you reach this page, you begin your search.
 The question is the following: do you always land on the philosphy page with this strategy?
 
 ## Structure of the code
@@ -50,7 +50,7 @@ Wiki ->              philosophie               ->/wiki/Philosophie
 ROOT FOUND
 ```
 
-As we can see, the path reaches the page "philosophie"!
+As we can see, the path reaches the page *philosophie*!
 
 It is now time to explore Wikipedia, with a Union-Find data-structure with path compression in order to speed up the search. To each wikipedia page, we link the cycle it reaches.
 
@@ -68,11 +68,9 @@ This is what we get:
 ```
 <Map : size=337> ->
 https://fr.wikipedia.org/wiki/Philosophie
-https://fr.wikipedia.org/wiki/1941_au_Maroc
-https://fr.wikipedia.org/wiki/Tokyo
 https://fr.wikipedia.org/wiki/Projet_(management)
 https://fr.wikipedia.org/wiki/H%C3%A9breu
-https://fr.wikipedia.org/wiki/Danois
 https://fr.wikipedia.org/wiki/Pologne
-https://fr.wikipedia.org/wiki/Arabe
 ```
+
+Out of those 337 visited pages, only 13 don't end up on the *philosophy* page. Among those 13, there is the page *Poland* that leads to *Polish* that leads to *Poland* again.
